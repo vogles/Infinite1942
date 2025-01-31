@@ -1,10 +1,13 @@
 #pragma once
+#include <map>
 #include <memory>
-#include <window.h>
+#include <string>
+#include <services/window.h>
 
 class ServiceLocator
 {
 private:
+	std::map<std::string, IService*> _services;
 	static inline std::unique_ptr<Window> _window = NULL;
 
 public:
@@ -15,4 +18,7 @@ public:
 
 		_window = std::unique_ptr<Window>(pWindow);
 	}
+
+	void RegisterInstance(IService *pService);
+	IService* GetInstance(std::string serviceName);
 };

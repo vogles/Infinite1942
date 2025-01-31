@@ -9,7 +9,17 @@ add_subdirectory(external/glfw)
 
 #file(GLOB SOURCES "src/**.cpp")
 #add_library(${PROJECT_NAME} ${SOURCES})
-add_library(${PROJECT_NAME} src/engine.cpp "include/services/window.h" "include/service_locator.h" "src/platform/GLWindow.h" "src/platform/GLWindow.cpp"  "include/game.h" "src/game.cpp" "include/services/service.h")
+add_library(${PROJECT_NAME} 
+	"include/services/service.h"
+	"include/services/window.h" 
+	"include/game.h" 
+	"include/service_locator.h" 
+	"src/platform/GLWindow.h" 
+	"src/platform/GLWindow.cpp"  
+	"src/engine.cpp"
+	"src/game.cpp" 
+	"src/service_locator.cpp"
+)
 
 target_include_directories(${PROJECT_NAME}
 	PUBLIC

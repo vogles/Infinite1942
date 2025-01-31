@@ -1,7 +1,7 @@
 #include <engine.h>
 #include <iostream>
 #include <memory>
-#include <window.h>
+#include <services/window.h>
 
 #include "platform/GLWindow.h"
 #include <service_locator.h>
