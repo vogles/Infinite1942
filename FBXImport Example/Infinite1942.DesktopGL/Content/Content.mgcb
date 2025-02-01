@@ -3,7 +3,6 @@
 
 /outputDir:bin/$(Platform)
 /intermediateDir:obj/$(Platform)
-/platform:DesktopGL
 /config:
 /profile:Reach
 /compress:False
@@ -13,3 +12,5 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin Art/Models/craft_speederA.fbx
+/copy:Art/Models/craft_speederA.fbx

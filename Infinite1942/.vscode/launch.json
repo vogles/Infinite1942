@@ -9,7 +9,12 @@
             "type": "dotnet",
             "request": "launch",
             "projectPath": "${workspaceFolder}/Infinite1942.DesktopGL/Infinite1942.DesktopGL.csproj"
+        },
+        {
+            "name": "C#: Infinite1942.Android Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/Infinite1942.Android/Infinite1942.Android.csproj"
         }
-
     ]
 }
