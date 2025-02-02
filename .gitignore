@@ -62,4 +62,5 @@ dkms.conf
 
 # Build folder
 [Bb]uild
-obj
+[Oo]bj
+[Bb]in

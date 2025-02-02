@@ -1,0 +1,16 @@
+
+#----------------------------- Global Properties ----------------------------#
+
+/outputDir:bin/$(Platform)
+/intermediateDir:obj/$(Platform)
+/config:
+/profile:Reach
+/compress:False
+
+#-------------------------------- References --------------------------------#
+
+
+#---------------------------------- Content ---------------------------------#
+
+#begin ../../Infinite1942.Content/Art/Models/craft_speederA.fbx
+/copy:../../Infinite1942.Content/Art/Models/craft_speederA.fbx;Art/Models/craft_speederA.fbx

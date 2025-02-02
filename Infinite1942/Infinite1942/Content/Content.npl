@@ -1,0 +1,29 @@
+{
+  "root": "",
+  "references": [
+
+  ],
+  "content": {
+    "models": {
+      "path": "Art/Models/*.fbx",
+      "recursive": "True",
+      "action": "copy"
+    },
+    "model_textures": {
+      "path": "Art/Models/Textures/*.png",
+      "recursive": "True",
+      "action": "build",
+      "importer": "TextureImporter",
+      "processor": "TextureProcessor",
+      "processorParam": {
+        "ColorKeyColor": "255,0,255,255",
+        "ColorKeyEnabled": "True",
+        "GenerateMipmaps": "False",
+        "PremultiplyAlpha": "True",
+        "ResizeToPowerOfTwo": "False",
+        "MakeSquare": "False",
+        "TextureFormat": "Color"
+      }
+    }
+  }
+}
