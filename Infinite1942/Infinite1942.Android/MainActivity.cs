@@ -1,7 +1,7 @@
 using Android.Views;
 using Microsoft.Xna.Framework;
 
-namespace Infinite1942.Android
+namespace Infinite1942
 {
     [Activity(Label = "@string/app_name", MainLauncher = true)]
     public class MainActivity : AndroidGameActivity

@@ -21,7 +21,7 @@
 		<PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.7.0.5" />
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\Infinite1942\Infinite1942.csproj" />
+	  <ProjectReference Include="..\Infinite1942.Content\Infinite1942.Content.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Update="Assets\Content\Art\Models\craft_speederA.fbx">
@@ -32,4 +32,5 @@
 		<Message Text="Restoring dotnet tools" Importance="high" />
 		<Exec Command="dotnet tool restore" />
 	</Target>
+	<Import Project="..\Infinite1942.Shared\Infinite1942.Shared.projitems" Label="Shared" />
 </Project>
