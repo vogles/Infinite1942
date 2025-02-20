@@ -3,14 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infinite1942", "Infinite1942\Infinite1942.csproj", "{3939A3C3-DC22-49FD-8E1B-E18C1073353E}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Infinite1942.Shared", "Infinite1942.Shared\Infinite1942.Shared.shproj", "{A0CDBD0E-3A41-42B7-9425-A838BC2C7383}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infinite1942.Content", "Infinite1942.Content\Infinite1942.Content.csproj", "{5FD70019-32E6-4501-A3C3-D3D5167DDEC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FD70019-32E6-4501-A3C3-D3D5167DDEC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FD70019-32E6-4501-A3C3-D3D5167DDEC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FD70019-32E6-4501-A3C3-D3D5167DDEC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FD70019-32E6-4501-A3C3-D3D5167DDEC9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Infinite1942.Shared\Infinite1942.Shared.projitems*{a0cdbd0e-3a41-42b7-9425-a838bc2c7383}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal
