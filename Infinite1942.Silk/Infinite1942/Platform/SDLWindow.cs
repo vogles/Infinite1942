@@ -13,31 +13,18 @@ namespace Infinite1942
         private Window* _sdlWindow;
 
         #region Initialization
-        /// <summary>
-        /// Initializes static members of the <see cref="SDLWindow"/> class.
-        /// </summary>
-        static SDLWindow()
+
+        public SDLWindow(Sdl sdlHandle, string title, int width, int height)
         {
-            _sdlHandle = Sdl.GetApi();
+            _sdlHandle = sdlHandle;
 
-            _sdlHandle.Init(Sdl.InitEverything);
-
-            // Pass first mouse event when user clicked on window
-            _sdlHandle.SetHint(Sdl.HintMouseFocusClickthrough, "1");
-            
-            // Don't leave fullscreen on focus loss
-            _sdlHandle.SetHint(Sdl.HintVideoMinimizeOnFocusLoss, "0");
-        }
-
-        public SDLWindow(string title)
-        {
             WindowFlags flags = WindowFlags.AllowHighdpi;
 
             flags |= WindowFlags.Opengl;
 
             flags |= /*WindowFlags.Hidden | */WindowFlags.Resizable;
 
-            _sdlWindow = _sdlHandle.CreateWindow(title, Sdl.WindowposCentered, Sdl.WindowposCentered, 640, 480, (uint)flags);
+            _sdlWindow = _sdlHandle.CreateWindow(title, Sdl.WindowposCentered, Sdl.WindowposCentered, width, height, (uint)flags);
 
             if (_sdlWindow == null)
             {

@@ -1,68 +1,69 @@
-﻿using Silk.NET.SDL;
-
-namespace Infinite1942;
-
-class Program
+﻿namespace Infinite1942
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Hello, World!");
-
-        SdlProvider.InitFlags = Sdl.InitVideo | Sdl.InitEvents;
-        var sdl = SdlProvider.SDL.Value;
-
-        unsafe
+        static void Main(string[] args)
         {
-            var errorString = sdl.GetErrorS();
-            if (!String.IsNullOrEmpty(errorString))
-            {
-                Console.WriteLine($"SDL failed to initialize: {errorString}");
-                return;
-            }
-            
-            var window = sdl.CreateWindow("Infinite 1942", Sdl.WindowposCentered, Sdl.WindowposCentered, 800, 600, 0);
+            Console.WriteLine("Hello, World!");
 
-            if (window == null)
-            {
-                errorString = sdl.GetErrorS();
-                Console.WriteLine($"SDL CreateWindow failed: {errorString}");
-                sdl.Quit();
-                return;
-            }
+            Platform.Platform.Initialize();
 
-            var renderer = sdl.CreateRenderer(window, -1, 0);
+            // SdlProvider.InitFlags = Sdl.InitVideo | Sdl.InitEvents;
+            // var sdl = SdlProvider.SDL.Value;
 
-            if (renderer == null)
-            {
-                errorString = sdl.GetErrorS();
-                Console.WriteLine($"SDL CreateRenderer failed: {errorString}");
-                sdl.DestroyWindow(window);
-                sdl.Quit();
-                return;
-            }
+            // unsafe
+            // {
+            //     var errorString = sdl.GetErrorS();
+            //     if (!String.IsNullOrEmpty(errorString))
+            //     {
+            //         Console.WriteLine($"SDL failed to initialize: {errorString}");
+            //         return;
+            //     }
 
-            sdl.SetRenderDrawColor(renderer, 255, 0, 255, 255);
+            //     var window = sdl.CreateWindow("Infinite 1942", Sdl.WindowposCentered, Sdl.WindowposCentered, 800, 600, 0);
 
-            bool isRunning = true;
-            Event evt = new Event();
+            //     if (window == null)
+            //     {
+            //         errorString = sdl.GetErrorS();
+            //         Console.WriteLine($"SDL CreateWindow failed: {errorString}");
+            //         sdl.Quit();
+            //         return;
+            //     }
 
-            while (isRunning)
-            {
-                while (sdl.PollEvent(ref evt) != 0)
-                {
-                    if (evt.Type == (uint)EventType.Quit)
-                    {
-                        isRunning = false;
-                    }
-                }
+            //     var renderer = sdl.CreateRenderer(window, -1, 0);
 
-                sdl.RenderClear(renderer);
-                sdl.RenderPresent(renderer);
-            }
-            
-            sdl.DestroyRenderer(renderer);
-            sdl.DestroyWindow(window);
-            sdl.Quit();
+            //     if (renderer == null)
+            //     {
+            //         errorString = sdl.GetErrorS();
+            //         Console.WriteLine($"SDL CreateRenderer failed: {errorString}");
+            //         sdl.DestroyWindow(window);
+            //         sdl.Quit();
+            //         return;
+            //     }
+
+            //     sdl.SetRenderDrawColor(renderer, 255, 0, 255, 255);
+
+            //     bool isRunning = true;
+            //     Event evt = new Event();
+
+            //     while (isRunning)
+            //     {
+            //         while (sdl.PollEvent(ref evt) != 0)
+            //         {
+            //             if (evt.Type == (uint)EventType.Quit)
+            //             {
+            //                 isRunning = false;
+            //             }
+            //         }
+
+            //         sdl.RenderClear(renderer);
+            //         sdl.RenderPresent(renderer);
+            //     }
+
+            //     sdl.DestroyRenderer(renderer);
+            //     sdl.DestroyWindow(window);
+            //     sdl.Quit();
+            // }
         }
     }
 }
