@@ -1,22 +1,48 @@
-using System;
+// using System;
 
-namespace Infinite1942.Platform
+using System.Runtime.InteropServices;
+using Silk.NET.Maths;
+using Silk.NET.Windowing;
+
+namespace Infinite1942
 {
     public static partial class Platform
     {
-        public static void Initialize()
+        public static IWindow CreateWindow(string title, int width, int height)
         {
-            InitializeSDL();
+            return CreateWindow(title, new Vector2D<int>(width, height));
         }
 
-        public static void Shutdown()
+        public static IWindow CreateWindow(string title, Vector2D<int> windowSize)
         {
-            ShutdownSDL();
+            var windowOptions = WindowOptions.Default;
+            windowOptions.API = GraphicsAPI.None;
+            windowOptions.Title = title;
+            windowOptions.Size = windowSize;
+
+            return Window.Create(windowOptions);
         }
 
-        public static IWindow GetWindow(string title, int width, int height)
+        public static string GetGraphicsBackend()
         {
-            return CreateSDLWindow(title, width, height);
+            // At some point I might implement Vulkan and Metal. But for now,
+            // I'm just going to return OpenGL for everything that isn't Windows.
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                return "DirectX";
+            }
+            // else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            // {
+            //     return "Vulkan";
+            // }
+            // else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            // {
+            //     return "Metal";
+            // }
+            else
+            {
+                return "OpenGL";
+            }
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Infinite1942
 {
-    public interface IWindow
-    {
-    }
+    // public interface IWindow
+    // {
+    // }
 }
