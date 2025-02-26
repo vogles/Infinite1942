@@ -16,7 +16,11 @@ namespace Infinite1942
         public static IWindow CreateWindow(string title, Vector2D<int> windowSize)
         {
             var windowOptions = WindowOptions.Default;
-            windowOptions.API = GraphicsAPI.None;
+            if (GetGraphicsBackend() == "DirectX")
+            {
+                windowOptions.API = GraphicsAPI.None;
+            }
+
             windowOptions.Title = title;
             windowOptions.Size = windowSize;
 
