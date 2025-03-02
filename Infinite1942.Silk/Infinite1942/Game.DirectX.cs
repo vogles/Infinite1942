@@ -1,4 +1,5 @@
-﻿using Silk.NET.Core.Contexts;
+﻿using Infinite1942.Graphics;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Native;
 using Silk.NET.Direct3D.Compilers;
 using Silk.NET.Direct3D11;
@@ -41,6 +42,7 @@ namespace Infinite1942
         public void RunDX()
         {
             InitializeDX();
+            Initialize();
 
             _isRunning = true;
             while (_isRunning)
@@ -63,57 +65,15 @@ namespace Infinite1942
                 _window.Initialize();
             }
 
-            //Whether or not to force use of DXVK on platforms where native DirectX implementations are available
-            const bool forceDxvk = false;
+            var graphicsDevice = new DXGraphicsDevice(_window);
+            graphicsDevice.Initialize();
 
-            dxgi = DXGI.GetApi(_window, forceDxvk);
-            d3d11 = D3D11.GetApi(_window, forceDxvk);
-            compiler = D3DCompiler.GetApi();
+            var meshRenderer = new DXMeshRenderer();
+            meshRenderer.Initialize(graphicsDevice);
 
-            SilkMarshal.ThrowHResult(
-                d3d11.CreateDevice(
-                    default(ComPtr<IDXGIAdapter>),
-                    D3DDriverType.Hardware,
-                    Software: default,
-                    (uint)CreateDeviceFlag.Debug,
-                    null,
-                    0,
-                    D3D11.SdkVersion,
-                    ref device,
-                    null,
-                    ref deviceContext
-                )
-            );
-
-            // Log debug messages for this device (given that we've enabled the debug flag). Don't do this in release code!
-            device.SetInfoQueueCallback(msg => Console.WriteLine(SilkMarshal.PtrToString((nint)msg.PDescription)));
-
-            // Create our swapchain.
-            var swapChainDesc = new SwapChainDesc1
-            {
-                BufferCount = 2, // double buffered
-                Format = Format.FormatB8G8R8A8Unorm,
-                BufferUsage = DXGI.UsageRenderTargetOutput,
-                SwapEffect = SwapEffect.FlipDiscard,
-                SampleDesc = new SampleDesc(1, 0)
-            };
-
-            // Create our DXGI factory to allow us to create a swapchain. 
-            factory = dxgi.CreateDXGIFactory<IDXGIFactory2>();
-
-            // Create the swapchain.
-            SilkMarshal.ThrowHResult
-            (
-                factory.CreateSwapChainForHwnd
-                (
-                    device,
-                    _window.Native!.DXHandle!.Value,
-                    in swapChainDesc,
-                    null,
-                    ref Unsafe.NullRef<IDXGIOutput>(),
-                    ref swapchain
-                )
-            );
+            _graphicsDevice = graphicsDevice;
+            _meshRenderer = meshRenderer;
+            _shader = new DXShader(graphicsDevice);
 
             // Create our vertex buffer.
             float[] vertices =
@@ -297,6 +257,7 @@ namespace Infinite1942
                 );
             }
 
+
             // Clean up any resources.
             vertexCode.Dispose();
             vertexErrors.Dispose();
@@ -341,6 +302,8 @@ namespace Infinite1942
 
             // Clean up any resources created in this method.
             renderTargetView.Dispose();
+
+            _meshRenderer.Render();
         }
 
         private void CleanupDX()
@@ -359,6 +322,7 @@ namespace Infinite1942
             d3d11.Dispose();
             dxgi.Dispose();
 
+            _graphicsDevice?.Dispose();
             _window?.Dispose();
         }
     }

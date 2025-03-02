@@ -6,6 +6,8 @@ namespace Infinite1942
 {
     public partial class Game
     {
+        private GL _gl = null;
+       
         // Temp variables to test functionality
         private uint _vao;
         private uint _vbo;
