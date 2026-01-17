@@ -5,9 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infinite1942.Android", "Infinite1942.Android\Infinite1942.Android.csproj", "{D4C7328D-17A6-44BD-9081-EE4DD9DD8755}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Infinite1942.Shared", "Infinite1942.Shared\Infinite1942.Shared.shproj", "{A0CDBD0E-3A41-42B7-9425-A838BC2C7383}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infinite1942.Content", "Infinite1942.Content\Infinite1942.Content.csproj", "{E0687801-8B8E-4E1A-BEAA-C7245FE981CC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infinite1942.Core", "Infinite1942.Core\Infinite1942.Core.csproj", "{515D3433-619C-A42B-1D68-9C87998C45A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,16 +19,12 @@ Global
 		{D4C7328D-17A6-44BD-9081-EE4DD9DD8755}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4C7328D-17A6-44BD-9081-EE4DD9DD8755}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D4C7328D-17A6-44BD-9081-EE4DD9DD8755}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{E0687801-8B8E-4E1A-BEAA-C7245FE981CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E0687801-8B8E-4E1A-BEAA-C7245FE981CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E0687801-8B8E-4E1A-BEAA-C7245FE981CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E0687801-8B8E-4E1A-BEAA-C7245FE981CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{515D3433-619C-A42B-1D68-9C87998C45A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{515D3433-619C-A42B-1D68-9C87998C45A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{515D3433-619C-A42B-1D68-9C87998C45A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{515D3433-619C-A42B-1D68-9C87998C45A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Infinite1942.Shared\Infinite1942.Shared.projitems*{a0cdbd0e-3a41-42b7-9425-a838bc2c7383}*SharedItemsImports = 13
-		Infinite1942.Shared\Infinite1942.Shared.projitems*{d4c7328d-17a6-44bd-9081-ee4dd9dd8755}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal

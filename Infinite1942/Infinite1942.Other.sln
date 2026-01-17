@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Infinite1942.Shared", "Infinite1942.Shared\Infinite1942.Shared.shproj", "{A0CDBD0E-3A41-42B7-9425-A838BC2C7383}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infinite1942.Content", "Infinite1942.Content\Infinite1942.Content.csproj", "{B12D8753-90AD-4D1E-97A4-65AF76CCFB25}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infinite1942.DesktopGL", "Infinite1942.DesktopGL\Infinite1942.DesktopGL.csproj", "{79F0A39C-4276-44EB-B3A5-BE2762458CDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infinite1942.Core", "Infinite1942.Core\Infinite1942.Core.csproj", "{515D3433-619C-A42B-1D68-9C87998C45A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,20 +13,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B12D8753-90AD-4D1E-97A4-65AF76CCFB25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B12D8753-90AD-4D1E-97A4-65AF76CCFB25}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B12D8753-90AD-4D1E-97A4-65AF76CCFB25}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B12D8753-90AD-4D1E-97A4-65AF76CCFB25}.Release|Any CPU.Build.0 = Release|Any CPU
 		{79F0A39C-4276-44EB-B3A5-BE2762458CDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{79F0A39C-4276-44EB-B3A5-BE2762458CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79F0A39C-4276-44EB-B3A5-BE2762458CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79F0A39C-4276-44EB-B3A5-BE2762458CDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{515D3433-619C-A42B-1D68-9C87998C45A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{515D3433-619C-A42B-1D68-9C87998C45A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{515D3433-619C-A42B-1D68-9C87998C45A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{515D3433-619C-A42B-1D68-9C87998C45A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Infinite1942.Shared\Infinite1942.Shared.projitems*{79f0a39c-4276-44eb-b3a5-be2762458cdd}*SharedItemsImports = 5
-		Infinite1942.Shared\Infinite1942.Shared.projitems*{a0cdbd0e-3a41-42b7-9425-a838bc2c7383}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal
