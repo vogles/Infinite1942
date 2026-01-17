@@ -16,4 +16,18 @@
   <ItemGroup>
     <MonoGameContentReference Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Content\Art\Models\craft_speederA.fbx">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Content\bin\Windows\Art\Models\craft_speederA.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Content\obj\Windows\.mgcontent" />
+    <None Include="$(MSBuildThisFileDirectory)Content\obj\Windows\.mgstats" />
+    <None Include="$(MSBuildThisFileDirectory)Content\obj\Windows\Art\Models\craft_speederA.mgcontent" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />
+  </ItemGroup>
 </Project>

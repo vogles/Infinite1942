@@ -3,14 +3,19 @@
 		<TargetFramework>net8.0</TargetFramework>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="MonoGame.Framework.Android" Version="3.8.2.1105" />
-		<PackageReference Include="MonoGame.Framework.WindowsDX" Version="3.8.2.1105" />
-		<PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.2.1105" />
-		<PackageReference Include="Nopipeline.Task" Version="2.3.0" />
+	  <None Remove="Content\Content.mgcb" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Content Include="Content\Content.mgcb" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="MonoGame.Framework.Android" Version="3.8.4.1" />
+		<PackageReference Include="MonoGame.Framework.WindowsDX" Version="3.8.4.1" />
+		<PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.4.1" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Update="Content\Art\Models\craft_speederA.fbx">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
 	  </None>
 	</ItemGroup>
 </Project>

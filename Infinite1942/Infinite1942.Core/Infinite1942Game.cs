@@ -1,4 +1,4 @@
-﻿using Assimp;
+﻿//using Assimp;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -12,7 +12,7 @@ namespace Infinite1942
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-        private Scene _ship;
+        //private Scene _ship;
         private BasicEffect _shipEffect;
         private VertexBuffer _shipVB;
 
