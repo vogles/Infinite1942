@@ -1,4 +1,4 @@
-﻿using Assimp;
+﻿//using Assimp;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -12,12 +12,13 @@ namespace Infinite1942
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-        private Scene _ship;
+        //private Scene _ship;
         private BasicEffect _shipEffect;
         private VertexBuffer _shipVB;
 
         private Transform _shipTransform;
         private Model _shipModel;
+        private Texture2D _shipTexture;
         //private Matrix world = Matrix.CreateTranslation() * Matrix.CreateFromYawPitchRoll(0, MathHelper.ToRadians(-20), MathHelper.ToRadians(180));
         private Matrix view = Matrix.CreateLookAt(new Vector3(0, 0, 30), new Vector3(0, 0, 0), Vector3.UnitY);
         private Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), 1280f / 720f, 0.1f, 1000f);
@@ -45,6 +46,7 @@ namespace Infinite1942
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            _shipTexture = Content.Load<Texture2D>("Art/Textures/simpleSpace_sheet");
             //var importer = new AssimpContext();
             //var personalFolder = System.Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             //string[] files;//= Directory.GetFiles(personalFolder);
@@ -54,7 +56,7 @@ namespace Infinite1942
             //var directories = Directory.GetDirectories(currentDir);
 
             //_ship = importer.ImportFile("/assets/Content/Art/Models/craft_speederA.fbx");
-            _shipModel = Content.Load<Model>("Art/Models/craft_speederA");
+            // _shipModel = Content.Load<Model>("Art/Models/craft_speederA");
             //_ship = importer.ImportFile("Content/Art/Models/craft_speederA.fbx");
 
             //List<VertexPositionColorNormal> shipVertices = new List<VertexPositionColorNormal>();
@@ -154,12 +156,22 @@ namespace Infinite1942
             //    pass.Apply();
             //    GraphicsDevice.DrawPrimitives(Microsoft.Xna.Framework.Graphics.PrimitiveType.TriangleList, 0, _shipVB.VertexCount / 3);
             //}
+            _spriteBatch.Begin();
+
+            _spriteBatch.Draw(_shipTexture, new Rectangle(0, 0, 100, 100), Color.White);
+            
+            
+            
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }
 
         private void DrawModel(Model model, Matrix world, Matrix view, Matrix projection)
         {
+            if (model == null)
+                return;
+            
             foreach (ModelMesh mesh in model.Meshes)
             {
                 foreach (BasicEffect effect in mesh.Effects)
