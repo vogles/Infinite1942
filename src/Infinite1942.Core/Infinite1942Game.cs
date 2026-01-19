@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Infinite1942.Engine;
+using Infinite1942.Engine.SceneManagement;
 
 namespace Infinite1942
 {
@@ -19,8 +20,6 @@ namespace Infinite1942
         private Texture2D _shipTexture;
 
         // systems
-        private InputManager _inputManager;
-
         private Camera _camera;
         private SpriteRenderer _shipRenderer;
 
@@ -40,7 +39,8 @@ namespace Infinite1942
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            _inputManager = new InputManager();
+            Components.Add(new InputManager(this));
+            Components.Add(new SceneManager(this));
 
             base.Initialize();
         }
@@ -78,7 +78,6 @@ namespace Infinite1942
                 Exit();
 
             // TODO: Add your update logic here
-            _inputManager.Update();
 /*
             if (Keyboard.GetState().IsKeyDown(Keys.Left))
             {
